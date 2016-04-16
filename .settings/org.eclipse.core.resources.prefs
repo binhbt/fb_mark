@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/Controller/PostSharesController.php=UTF-8
+encoding//src/Template/Layout/none.ctp=UTF-8
+encoding//src/Template/PostShares/add.ctp=UTF-8
+encoding//src/Template/PostShares/failed.ctp=UTF-8
+encoding//src/Template/PostShares/index.ctp=UTF-8
+encoding//src/Template/PostShares/media.ctp=UTF-8
+encoding//src/Template/PostShares/share.ctp=UTF-8
+encoding//src/Template/PostShares/success.ctp=UTF-8
