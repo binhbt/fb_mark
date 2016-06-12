@@ -328,4 +328,30 @@ class PostSharesController extends AppController {
 		$this->Flash->error ( __ ( 'Bạn đã bắn bài thành công.' ) );
 	
 	}
+	public function isAuthorized($user)
+	{
+		$action = $this->request->params['action'];
+	
+		// The add and index actions are always allowed.
+		if (in_array($action, ['index', 'add', 'tags'])) {
+			return true;
+		}
+		if (!empty($user)){
+			return true;
+		}
+		/*
+		// All other actions require an id.
+		if (empty($this->request->params['pass'][0])) {
+			return false;
+		}
+		
+		// Check that the bookmark belongs to the current user.
+		$id = $this->request->params['pass'][0];
+		$bookmark = $this->Bookmarks->get($id);
+		if ($bookmark->user_id == $user['id']) {
+			return true;
+		}
+		*/
+		return parent::isAuthorized($user);
+	}
 }
