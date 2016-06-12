@@ -45,7 +45,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="top-bar-section">
             <ul class="right">
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+                <?php if (!is_null($this->request->session()->read('Auth.User.email'))){ ?>
+                                <li><a target="_blank" href="users/logout">Logout</a></li>
+				<?php } else { ?>
+								<li><a target="_blank" href="users/login">Login</a></li>
+				<?php } ?>
+
             </ul>
         </div>
     </nav>

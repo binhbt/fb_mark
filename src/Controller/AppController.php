@@ -46,10 +46,10 @@ class AppController extends Controller
         $this->loadComponent('Flash');
     }
 */
-	public function isAuthorized($user)
-	{
+public function isAuthorized($user)
+{
 		return false;
-	}
+}
 public function initialize()
 {
     $this->loadComponent('Flash');
