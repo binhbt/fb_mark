@@ -72,7 +72,7 @@ public function initialize()
 
     // Allow the display action so our pages controller
     // continues to work.
-    $this->Auth->allow(['display']);
+    $this->Auth->allow(['display', 'media']);
 }
     /**
      * Before render callback.

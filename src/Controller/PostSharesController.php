@@ -246,7 +246,7 @@ class PostSharesController extends AppController {
 					$yId = str_replace ( "https://www.youtube.com/v/", "", $postShare ['link'] );
 				}
 				$postShare ['link'] = "https://www.youtube.com/v/" . $yId;
-				$postShare ['photo_url'] = "http://img.youtube.com/vi/" . $yId . "/maxresdefault.jpg";
+				$postShare ['photo_url'] = "http://img.youtube.com/vi/" . $yId . "/0.jpg";
 			}
 			
 			if ($this->PostShares->save ( $postShare )) {
@@ -333,18 +333,15 @@ class PostSharesController extends AppController {
 		$action = $this->request->params['action'];
 	
 		// The add and index actions are always allowed.
-		if (in_array($action, ['index', 'add', 'tags'])) {
+		if (in_array($action, ['media'])) {
 			return true;
 		}
 		if (!empty($user)){
 			return true;
 		}
-		/*
-		// All other actions require an id.
-		if (empty($this->request->params['pass'][0])) {
-			return false;
-		}
 		
+
+		/*
 		// Check that the bookmark belongs to the current user.
 		$id = $this->request->params['pass'][0];
 		$bookmark = $this->Bookmarks->get($id);
